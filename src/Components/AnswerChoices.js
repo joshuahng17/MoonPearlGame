@@ -1,3 +1,4 @@
+import "./AnswerChoices.css"
 
 function AnswerChoices({onAnswerChoice}){
     //console.log(onAnswerChoice);

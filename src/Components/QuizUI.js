@@ -24,6 +24,8 @@ function QuizUI(){
     const [correctAnswers, setCorrectAnswers] = useState(0);
     return(
         <>
+        <h3>Where could the moon pearl be?</h3>
+        <h5>(Uses HMG logic)</h5>
             <div>
                 {answeredQuestions < count ? (
                 <LocationQuestion location = {shuffledLocations[answeredQuestions]}/>
@@ -32,7 +34,12 @@ function QuizUI(){
                 )}
             </div>
             <div>
-            <AnswerChoices onAnswerChoice = {handleClick}/>
+            {answeredQuestions < count && <AnswerChoices onAnswerChoice = {handleClick}/>}
+            </div>
+            <br></br>
+            <div>
+                <h4>Set Number of Questions</h4>
+                <input onChange={(event)=>{setCount(event.target.value)}}></input>
             </div>
         </>
     )
